@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // async function getData() {
+//     setTimeout(function(){
+//     console.log("I am inside set Timeout block")
+// },3000);
+// }
+
+// getData();
+
+// await - ?
+
+//fetch api
+async function getData() {
+
+    // get request marni ha 
+    let response = await fetch('https://api.github.com/users/bhattiaman')
+    let data = await response.json();
+    console.log(data);
+
+    console.log(response);  
+}
+getData(); 
+
+
+// Scenario:
+// prepare url / api endpoint -> sync
+// await // fetch data -> network call -> async
+// process.data -> sync
+
+
+    </script>
+</body>
+</html>
