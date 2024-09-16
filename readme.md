@@ -2,6 +2,52 @@
 
 This is a simple web page that displays a user profile card. The profile data is dynamically fetched from the GitHub API.
 
+
+# Fetch API Example
+
+This is a basic example of how to use the `fetch` API with `async/await` to retrieve data from a GitHub user profile and log the data to the console.
+
+## HTML Structure
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Example of using async/await and fetch API
+
+        // Function to fetch data from GitHub API
+        async function getData() {
+            // Sending a GET request to the GitHub API
+            let response = await fetch('https://api.github.com/users/bhattiaman');
+            
+            // Parsing the response as JSON
+            let data = await response.json();
+            
+            // Logging the fetched data to the console
+            console.log(data);
+            
+            // Logging the response object itself
+            console.log(response);  
+        }
+
+        // Calling the function to execute the fetch request
+        getData(); 
+
+        // Scenario:
+        // 1. Prepare the URL / API endpoint (synchronous)
+        // 2. Use 'await' to fetch data (asynchronous network call)
+        // 3. Process the fetched data (synchronous)
+    </script>
+</body>
+</html>
+
+
 ## HTML Structure
 
 ```html
