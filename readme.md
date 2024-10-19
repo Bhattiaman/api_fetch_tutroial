@@ -1,3 +1,42 @@
+# React code for fetch data
+
+```import React, { useEffect } from 'react';
+import axios from 'axios';
+
+const ApiFetch = () => {
+  const options = {
+    method: 'GET',
+    url: 'https://quotes15.p.rapidapi.com/quotes/random/',  // Ensure you are using the correct URL
+    headers: {
+      'x-rapidapi-key': 'ec8a1aeb8bmshd9e0d4352a55b6ap122c23jsn4207f0074b62',
+      'x-rapidapi-host': 'quotes15.p.rapidapi.com'
+    }
+  };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.request(options);
+        console.log(response.data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  return (
+    <>
+      <h1>Start Learning to Fetch Data from API</h1>
+    </>
+  );
+};
+
+export default ApiFetch;
+
+```
+
 # Profile Card
 
 This is a simple web page that displays a user profile card. The profile data is dynamically fetched from the GitHub API.
